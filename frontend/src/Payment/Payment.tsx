@@ -45,4 +45,4 @@ function PaymentScreen(){
         </div>
     );
 }
-export default PaymentScreen;
+export default PaymentScreen; 
