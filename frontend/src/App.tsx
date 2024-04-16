@@ -3,8 +3,11 @@ import logo from './logo.svg';
 import './App.css';
 
 
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom"; import Home from "./Home/Home";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom"; 
+import Home from "./Home/Home";
 import Products from "./Products/Products";
+import Orders from './Orders/Orders';
+import OrderDetail from './Orders/OrderDetails';
 
 function App() {
   const openMenu = () => {
@@ -29,12 +32,14 @@ function App() {
                 <div className="header-links">
                   <Link to="/">Home</Link>
                   <Link to="/catalog">Catalog</Link>
+                  <Link to="/orders">Orders</Link>
                 </div>
             </header>  
                 
                 <aside className="sidebar">
                 <h3>Shopping Categories</h3>
                 <button className="sidebar-close-button" onClick={closeMenu}>x</button> 
+                
                 <ul> 
                     <li>      <a href="index.html">Pants</a>       </li>
                     <li>      <a href="index.html">Shirts</a>      </li>
@@ -44,6 +49,9 @@ function App() {
                 <Routes>
                 <Route path="/" element={<Home /> } />
                 <Route path="/catalog" element={<Products />} />
+                <Route path="/orders" element={<Orders />} />
+                <Route path="/order/:id" element={<OrderDetail />} />
+
                 </Routes>
                 </main>         
                             
